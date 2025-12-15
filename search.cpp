@@ -173,7 +173,7 @@ void z()
 	printf(" ply %d ",ply);
 	printf(" nodes %d ",nodes);
 	ShowBestLine();
-	getch();
+	// getc();
 }
 
 int Triple2()

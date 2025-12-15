@@ -1,4 +1,5 @@
 #include "globals.h"
+#include "string"
 
 int LoadDiagram(char* file);
 void CloseDiagram();
@@ -19,7 +20,7 @@ if (!diagram_file)
 	return -1;
 }
 
-strcpy_s(fen_name,file);
+strcpy(fen_name,file);
 
 fgets(ts, 256, diagram_file);
 
@@ -141,8 +142,8 @@ for(int x=0;x<32;x++)
 	if(board[x]==RM)
 	{
 		if(wc>0)
-			strcat(b,",");
-		strcat(b,itoa(x+1,a,10));
+		strcat(b,",");
+		strcat(b, std::to_string(x + 1).c_str());
 		wc++;
 	}
 	if(board[x]==RK)
@@ -150,7 +151,7 @@ for(int x=0;x<32;x++)
 		if(wc>0)
 			strcat(b,",");
 		strcat(b,"K");
-		strcat(b,itoa(x+1,a,10));
+		strcat(b, std::to_string(x + 1).c_str());
 		wc++;
 	}	
 }
@@ -161,7 +162,7 @@ for(int x=0;x<32;x++)
 	{
 		if(bc>0)
 			strcat(b,",");
-		strcat(b,itoa(x+1,a,10));
+		strcat(b, std::to_string(x + 1).c_str());
 		bc++;
 	}
 	if(board[x]==BK) 
@@ -169,7 +170,7 @@ for(int x=0;x<32;x++)
 		if(bc>0)
 			strcat(b,",");
 		strcat(b,"K");
-		strcat(b,itoa(x+1,a,10));
+		strcat(b, std::to_string(x + 1).c_str());
 		bc++;
 	}		
 }

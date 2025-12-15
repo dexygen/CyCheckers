@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-void main();
+int main();
 
 
 int _tmain(int argc, _TCHAR* argv[])

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <iostream>
 #include <windows.h>
 #include "globals.h"
@@ -152,7 +151,7 @@ BITBOARD GetLock();
 
 int Triple();
 
-void main()
+int main()
 {
 printf("Bills Checker Engine\n");
 printf("Version 1.0, 14/5/21\n");
@@ -203,7 +202,7 @@ for(int x=0;x<32;x++)
 	printf(" se %d ",squares[x].se);
 	printf(" sw %d ",squares[x].sw);
 	printf(" nw %d ",squares[x].nw);
-	getch();
+	getchar();
 	memset(board,0,sizeof(board));
 }
 //*/
@@ -246,7 +245,7 @@ if(moves==0 && captures==0)
   {
 	   printf("\nLight has won the game!\n");
   }
-  getch();
+  getchar();
   NewGame();
   DisplayBoard(0,0);
 }
@@ -284,16 +283,16 @@ if(player[side]==COMP)
 	{
 		printf("Triple repetition!");
 		NewGame();
-		getch();
+		getchar();
 	}
 	if(gamelist[hply].fifty > 40)
 	{
 		printf("Draw by 40 moves!");
 		NewGame();
-		getch();
+		getchar();
 	}
 	if(player[side]==COMP)
-	    getch();
+	    getchar();
 	continue;
 }
     result = 0;//
@@ -333,20 +332,20 @@ if(player[side]==COMP)
 			if (!strcmp(ms, "sb")) 
 	{
 		sFen[0] = 0;
-		strcat_s(sFen,"c:\\checkers\\");//
+		strcat(sFen,"c:\\checkers\\");//
 		scanf("%s", sText);
-		strcat_s(sFen,sText);
-		strcat_s(sFen,".fen");
+		strcat(sFen,sText);
+		strcat(sFen,".fen");
 		LoadDiagram(sFen);
 		continue;
 	}
 	if (!strcmp(ms, "sa")) 
 	{
 		sFen[0] = 0;
-		strcat_s(sFen,"c:\\checkers\\");//
+		strcat(sFen,"c:\\checkers\\");//
 		scanf("%s", sText);
-		strcat_s(sFen,sText);
-		strcat_s(sFen,".fen");
+		strcat(sFen,sText);
+		strcat(sFen,".fen");
 		SaveDiagram(sFen);
 		continue;
 	}

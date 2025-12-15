@@ -1,10 +1,8 @@
 #include <stdio.h>
-#include <conio.h>
 #include <memory.h>
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#include <dos.h>
 #include <time.h>
 #include <assert.h>
 
